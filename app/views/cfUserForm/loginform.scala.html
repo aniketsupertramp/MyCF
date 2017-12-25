@@ -1,0 +1,29 @@
+@(cFUser: Form[CFUser])
+@import helper;
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>SignUp/Login</title>
+        @*<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">*@
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+    </head>
+    <body>
+    <h2>SignUp</h2>
+        @helper.form(action = routes.CFUserController.save()){
+            @helper.inputText(cFUser("firstName"));
+            @helper.inputText(cFUser("lastName"));
+            @helper.inputText(cFUser("email"));
+            @helper.inputText(cFUser("phoneNo"));
+            @helper.inputText(cFUser("address"));
+            @helper.inputText(cFUser("city"));
+            @helper.inputText(cFUser("country"));
+            @helper.inputDate(cFUser("dob"));
+            @helper.inputPassword(cFUser("password"));
+
+        }
+    <input type="submit" value="Sign Up" />
+    </body>
+</html>
